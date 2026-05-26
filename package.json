@@ -1,0 +1,21 @@
+{
+  "name": "uno-friends-online",
+  "version": "1.0.0",
+  "description": "Responsive online UNO-style card game with rooms, bots, spectators, scores, themes, sound, music, and reactions.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "uno",
+    "card-game",
+    "multiplayer",
+    "render"
+  ],
+  "license": "MIT"
+}

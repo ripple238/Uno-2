@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UNO Friends Online</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main id="app" class="app shell-loading">
+      <section id="home" class="home-screen">
+        <div class="aurora"></div>
+        <nav class="topbar">
+          <div class="brand">
+            <span class="brand-mark">U</span>
+            <span>UNO Friends</span>
+          </div>
+          <button id="soundToggle" class="icon-button" title="Toggle sound" aria-label="Toggle sound">♪</button>
+        </nav>
+
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Private rooms, bots, spectators, scores</p>
+            <h1>Play wild card nights with your friends online.</h1>
+            <p class="intro">Create a room, share the code, add practice bots, track every round, react with emojis, and play with animated cards, themes, music, and sound effects.</p>
+            <div class="home-actions">
+              <input id="playerName" maxlength="18" autocomplete="nickname" placeholder="Your name" />
+              <button id="createRoom" class="primary">Create Room</button>
+            </div>
+          </div>
+
+          <div class="join-panel">
+            <h2>Join a room</h2>
+            <input id="roomCode" maxlength="5" placeholder="ROOM CODE" />
+            <div class="join-grid">
+              <button id="joinRoom" class="secondary">Join as Player</button>
+              <button id="spectateRoom" class="ghost">Spectate</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="table" class="table-screen hidden">
+        <div class="table-bg"></div>
+        <header class="gamebar">
+          <div>
+            <p class="eyebrow">Room <button id="copyCode" class="code-pill"></button></p>
+            <h2 id="roundTitle">Lobby</h2>
+          </div>
+          <div class="gamebar-actions">
+            <button id="musicToggle" class="icon-button" title="Toggle music" aria-label="Toggle music">♫</button>
+            <button id="leaveRoom" class="icon-button" title="Leave room" aria-label="Leave room">×</button>
+          </div>
+        </header>
+
+        <aside class="scoreboard">
+          <div class="panel-head">
+            <h3>Scoreboard</h3>
+            <span id="directionBadge">Clockwise</span>
+          </div>
+          <div id="players" class="players"></div>
+          <div id="spectators" class="spectators"></div>
+        </aside>
+
+        <section class="playfield">
+          <div id="opponents" class="opponents"></div>
+          <div class="center-table">
+            <div class="deck-zone">
+              <button id="drawCard" class="deck-card" aria-label="Draw card">
+                <span id="deckCount">0</span>
+              </button>
+              <p>Draw</p>
+            </div>
+            <div id="discard" class="discard-slot"></div>
+            <div class="turn-panel">
+              <p id="turnText">Waiting in lobby</p>
+              <strong id="colorText">No color</strong>
+              <div id="wildChooser" class="wild-chooser hidden">
+                <button data-color="red"></button>
+                <button data-color="yellow"></button>
+                <button data-color="green"></button>
+                <button data-color="blue"></button>
+              </div>
+            </div>
+          </div>
+          <div id="hand" class="hand"></div>
+        </section>
+
+        <aside class="control-dock">
+          <div class="panel-head">
+            <h3>Table</h3>
+            <span id="roleBadge">Player</span>
+          </div>
+          <button id="startRound" class="primary">Start Round</button>
+          <button id="addBot" class="secondary">Add AI Bot</button>
+          <label class="select-label">
+            Card theme
+            <select id="themeSelect">
+              <option value="neon">Neon arcade</option>
+              <option value="classic">Classic</option>
+              <option value="candy">Candy pop</option>
+              <option value="midnight">Midnight glass</option>
+            </select>
+          </label>
+          <div class="reactions">
+            <button>🔥</button>
+            <button>😂</button>
+            <button>😱</button>
+            <button>👏</button>
+            <button>💀</button>
+          </div>
+          <div id="eventLog" class="event-log"></div>
+        </aside>
+
+        <div id="toast" class="toast hidden"></div>
+        <div id="reactionLayer" class="reaction-layer"></div>
+      </section>
+    </main>
+    <script src="/client.js"></script>
+  </body>
+</html>
